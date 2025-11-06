@@ -1,7 +1,7 @@
 // 声明相关信息
 
-// 当前配方仅兼容1.0.0后的版本
-fromVersion "1.0.0"
+// 当前配方仅兼容2.0.0后的版本
+fromVersion "2.0.0"
 
 // 当前Package Name
 packageName "DaveGamble/cJSON"
@@ -13,9 +13,9 @@ desc "Ultralightweight JSON parser in ANSI C"
 homepage "https://github.com/DaveGamble/cJSON"
 
 
-onBuild matrix => {
-	return {
-	}, nil
+onBuild m => {
+	echo "2.0.0"
+    return nil, nil
 }
 
 onSource ver => {
