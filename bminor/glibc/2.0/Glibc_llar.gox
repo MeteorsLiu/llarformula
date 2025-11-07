@@ -1,0 +1,27 @@
+// 声明相关信息
+
+// 当前配方仅兼容2.0后的版本
+fromVersion "2.0"
+
+// 当前Package Name
+packageName "bminor/glibc"
+
+// Package 描述
+desc "A massively spiffy yet delicately unobtrusive compression library"
+
+// Package 主页
+homepage "https://github.com/bminor/glibc"
+
+
+onBuild m => {
+	echo "libc 2.0.0"
+    return nil, nil
+}
+
+onSource ver => {
+	return "", nil
+}
+
+onVersions => {
+	return nil
+}

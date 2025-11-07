@@ -1,0 +1,9 @@
+{
+	"name": "madler/zlib",
+	"deps": [
+		{
+			"name": "bminor/glibc",
+			"version": "2.39"
+		}
+	]
+}

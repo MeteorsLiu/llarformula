@@ -1,0 +1,9 @@
+{
+    "name": "DaveGamble/cJSON",
+    "deps": [
+        {
+            "name": "madler/zlib",
+            "version": "1.2.1"
+        }
+    ]
+}
