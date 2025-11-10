@@ -1,0 +1,9 @@
+import (
+    semver "github.com/Masterminds/semver/v3"
+)
+
+compare (a, b) => {
+    v1 := semver.NewVersion(a.Ver)!
+    v2 := semver.NewVersion(b.Ver)!
+    return v1.Compare(v2)
+}
