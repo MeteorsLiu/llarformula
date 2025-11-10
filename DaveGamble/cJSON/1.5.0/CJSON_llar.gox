@@ -12,10 +12,15 @@ desc "Ultralightweight JSON parser in ANSI C"
 // Package 主页
 homepage "https://github.com/DaveGamble/cJSON"
 
+onRequire (graph) => {
+	echo version, matrix
+}
 
-onBuild m => {
-	echo "1.5.0"
-    return nil, nil
+onBuild => {
+	echo "hello cjson 1.5.0 \n Former ${lastArtifact}"
+    return {Link: (args) => {
+		return append(args, "-ICjson")
+	}}, nil
 }
 
 onSource ver => {

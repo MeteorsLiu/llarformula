@@ -4,7 +4,7 @@
 fromVersion "2.0.0"
 
 // 当前Package Name
-packageName "madler/zlib"
+packageName "madler/zlib/v2"
 
 // Package 描述
 desc "A massively spiffy yet delicately unobtrusive compression library"
@@ -13,9 +13,11 @@ desc "A massively spiffy yet delicately unobtrusive compression library"
 homepage "https://github.com/madler/zlib"
 
 
-onBuild m => {
+onBuild => {
 	echo "zlib 2.0.0"
-    return nil, nil
+    return {Link: (args) => {
+		return append(args, "-IZlib")
+	}}, nil
 }
 
 onSource ver => {

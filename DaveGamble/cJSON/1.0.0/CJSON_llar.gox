@@ -13,9 +13,11 @@ desc "Ultralightweight JSON parser in ANSI C"
 homepage "https://github.com/DaveGamble/cJSON"
 
 
-onBuild m => {
+onBuild => {
 	echo "1.0.0"
-    return nil, nil
+    return {Link: (args) => {
+		return append(args, "-ICjson")
+	}}, nil
 }
 
 onSource ver => {

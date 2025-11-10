@@ -3,6 +3,7 @@ import (
 )
 
 compare (a, b) => {
+    echo "a: ${a.Ver} b: ${b.Ver}"
     v1 := semver.NewVersion(a.Ver)!
     v2 := semver.NewVersion(b.Ver)!
     return v1.Compare(v2)

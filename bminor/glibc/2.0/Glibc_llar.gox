@@ -13,9 +13,11 @@ desc "A massively spiffy yet delicately unobtrusive compression library"
 homepage "https://github.com/bminor/glibc"
 
 
-onBuild m => {
-	echo "libc 2.0.0"
-    return nil, nil
+onBuild => {
+	echo "hello libc 2.0.0 \nFormer ${lastArtifact}"
+    return {Link: (args) => {
+		return append(args, "-Ilibc")
+	}}, nil
 }
 
 onSource ver => {

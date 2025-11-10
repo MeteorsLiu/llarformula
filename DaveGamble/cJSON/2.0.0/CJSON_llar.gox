@@ -4,7 +4,7 @@
 fromVersion "2.0.0"
 
 // 当前Package Name
-packageName "DaveGamble/cJSON"
+packageName "DaveGamble/cJSON/v2"
 
 // Package 描述
 desc "Ultralightweight JSON parser in ANSI C"
@@ -13,9 +13,11 @@ desc "Ultralightweight JSON parser in ANSI C"
 homepage "https://github.com/DaveGamble/cJSON"
 
 
-onBuild m => {
-	echo "2.0.0"
-    return nil, nil
+onBuild => {
+	echo "hello cjson 2.0.0 \n Former ${lastArtifact}"
+    return {Link: (args) => {
+		return append(args, "-ICjson")
+	}}, nil
 }
 
 onSource ver => {

@@ -13,9 +13,11 @@ desc "A massively spiffy yet delicately unobtrusive compression library"
 homepage "https://github.com/madler/zlib"
 
 
-onBuild m => {
-	echo "zlib 1.0.0"
-    return nil, nil
+onBuild => {
+	echo "hello, zlib 1.0.0 \n Former ${lastArtifact}"
+    return {Link: (args) => {
+		return append(args, "-IZlib")
+	}}, nil
 }
 
 onSource ver => {
